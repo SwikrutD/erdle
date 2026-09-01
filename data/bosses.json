@@ -1,0 +1,3928 @@
+{
+ "schema_version": 1,
+ "source": "PvE stats workbook + regulation.bin + spreadsheet",
+ "_warning": "Entries with confidence 'regulation' come from the game's own NpcParam and supersede the spreadsheet. 'sheet' is the spreadsheet. 'name-only' has a verified name and no stats.",
+ "scale": {
+  "0": "immune",
+  "1": "resistant",
+  "2": "normal",
+  "3": "weak"
+ },
+ "bosses": {
+  "abductor_virgins": {
+   "name": "Abductor Virgins",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "pierce": 1,
+    "fire": 1,
+    "lightning": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 3,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 3,
+    "fire": 2,
+    "lightning": 5,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "adan_thief_of_fire": {
+   "name": "Adan, Thief of Fire",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 2,
+    "madness": 2
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 86,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "alabaster_lord": {
+   "name": "Alabaster Lord",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 3,
+    "madness": 0,
+    "frost": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "slash": 2,
+    "strike": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "regulation",
+   "poise": 65,
+   "note": "NpcParam row 36000000 (variants agree)"
+  },
+  "alecto_black_knife_ringleader": {
+   "name": "Alecto, Black Knife Ringleader",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 21002922"
+  },
+  "ancestor_spirit": {
+   "name": "Ancestor Spirit",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "fire": 3,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 46700065"
+  },
+  "ancestral_follower": {
+   "name": "Ancestral Follower",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "sleep": 2,
+    "madness": 0,
+    "frost": 1
+   },
+   "damage": {
+    "standard": 3,
+    "slash": 3,
+    "pierce": 3
+   },
+   "severity": {
+    "standard": 4,
+    "slash": 4,
+    "strike": 3,
+    "pierce": 4,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "regulation",
+   "poise": 40,
+   "note": "NpcParam row 33600000 (variants agree)"
+  },
+  "ancient_dragon_lansseax": {
+   "name": "Ancient Dragon Lansseax",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 0,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 600,
+   "note": "PvE workbook, NpcParam row 45102030"
+  },
+  "ancient_hero_of_zamor": {
+   "name": "Ancient Hero of Zamor",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 1,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "fire": 3,
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 71000950"
+  },
+  "astel_naturalborn_of_the_void": {
+   "name": "Astel, Naturalborn of the Void",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 46200062"
+  },
+  "astel_stars_of_darkness": {
+   "name": "Astel, Stars of Darkness",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 46200952"
+  },
+  "battlemage_hugues": {
+   "name": "Battlemage Hugues",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "strike": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 2,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 1,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 37040940"
+  },
+  "beast_clergyman": {
+   "name": "Beast Clergyman",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 21100072"
+  },
+  "beastman_of_farum_azula": {
+   "name": "Beastman of Farum Azula",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "fire": 3,
+    "lightning": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 2,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "short": "BEASTMAN",
+   "aliases": [
+    "Beastman"
+   ],
+   "note": "PvE workbook, NpcParam row 39701910"
+  },
+  "bell_bearing_hunter": {
+   "name": "Bell Bearing Hunter",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 31000033"
+  },
+  "black_blade_kindred": {
+   "name": "Black Blade Kindred",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 3,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 110,
+   "note": "PvE workbook, NpcParam row 47701242"
+  },
+  "black_knife_assassin": {
+   "name": "Black Knife Assassin",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 21000830"
+  },
+  "bloodhound_knight": {
+   "name": "Bloodhound Knight",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 42900920"
+  },
+  "bloodhound_knight_darriwil": {
+   "name": "Bloodhound Knight Darriwil",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 42900010"
+  },
+  "bloodhound_knight_floh": {
+   "name": "Bloodhound Knight Floh",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 3,
+    "madness": 0,
+    "frost": 3
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "strike": 1,
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 2,
+    "slash": 2,
+    "strike": 2,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "regulation",
+   "poise": 65,
+   "note": "NpcParam c4290 (every variant of this model is identical)"
+  },
+  "bols_carian_knight": {
+   "name": "Bols, Carian Knight",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 46010920"
+  },
+  "borealis_the_freezing_fog": {
+   "name": "Borealis the Freezing Fog",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 2,
+    "slash": 0,
+    "pierce": 0,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 45030050"
+  },
+  "cemetery_shade": {
+   "name": "Cemetery Shade",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 1,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 70,
+   "note": "PvE workbook, NpcParam row 36640920"
+  },
+  "cleanrot_knight": {
+   "name": "Cleanrot Knight",
+   "statuses": {
+    "poison": 2,
+    "rot": 0,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "magic": 1,
+    "fire": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 38001940"
+  },
+  "commander_niall": {
+   "name": "Commander Niall",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 90,
+   "note": "PvE workbook, NpcParam row 30500051"
+  },
+  "commander_o_neil": {
+   "name": "Commander O'Neil",
+   "statuses": {
+    "poison": 2,
+    "rot": 0,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 90,
+   "note": "PvE workbook, NpcParam row 30500140"
+  },
+  "crucible_knight": {
+   "name": "Crucible Knight",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "aliases": [
+    "Crucible Knight (Capital)",
+    "Crucible Knight (Limgrave)"
+   ],
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 25001933"
+  },
+  "crucible_knight_ordovis": {
+   "name": "Crucible Knight Ordovis",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 25000933"
+  },
+  "crucible_knight_siluria": {
+   "name": "Crucible Knight Siluria",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 0,
+    "frost": 1,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 25001066"
+  },
+  "crystalian": {
+   "name": "Crystalian",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 0,
+    "strike": 2,
+    "slash": 0,
+    "pierce": 0,
+    "magic": 0,
+    "fire": 0,
+    "lightning": 0,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 70,
+   "note": "PvE workbook, NpcParam row 33501920"
+  },
+  "crystalian_ringblade": {
+   "name": "Crystalian Ringblade",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 0,
+    "strike": 2,
+    "slash": 0,
+    "pierce": 0,
+    "magic": 0,
+    "fire": 0,
+    "lightning": 0,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 70,
+   "note": "PvE workbook, NpcParam row 33500930"
+  },
+  "crystalian_spear": {
+   "name": "Crystalian Spear",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 0,
+    "strike": 2,
+    "slash": 0,
+    "pierce": 0,
+    "magic": 0,
+    "fire": 0,
+    "lightning": 0,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 70,
+   "note": "PvE workbook, NpcParam row 33501920"
+  },
+  "crystalian_staff": {
+   "name": "Crystalian Staff",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 0,
+    "strike": 2,
+    "slash": 0,
+    "pierce": 0,
+    "magic": 0,
+    "fire": 0,
+    "lightning": 0,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 70,
+   "note": "PvE workbook, NpcParam row 33502920"
+  },
+  "death_rite_bird": {
+   "name": "Death Rite Bird",
+   "statuses": {
+    "poison": 0,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 3,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 5,
+    "slash": 2,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 1,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 49801040"
+  },
+  "deathbird": {
+   "name": "Deathbird",
+   "statuses": {
+    "poison": 0,
+    "rot": 2,
+    "bleed": 0,
+    "sleep": 0,
+    "madness": 0,
+    "frost": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "strike": 3,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 2,
+    "slash": 2,
+    "strike": 5,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 5
+   },
+   "confidence": "regulation",
+   "poise": 120,
+   "note": "NpcParam c4980 (every variant of this model is identical)"
+  },
+  "decaying_ekzykes": {
+   "name": "Decaying Ekzykes",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 5,
+    "strike": 5,
+    "slash": 5,
+    "pierce": 4,
+    "magic": 5,
+    "fire": 5,
+    "lightning": 5,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 45010040"
+  },
+  "demi_human_chief": {
+   "name": "Demi-Human Chief",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 3,
+    "madness": 0,
+    "frost": 3
+   },
+   "damage": {
+    "standard": 3,
+    "slash": 3,
+    "strike": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 4,
+    "slash": 5,
+    "strike": 4,
+    "pierce": 4,
+    "magic": 5,
+    "fire": 5,
+    "lightning": 5,
+    "holy": 5
+   },
+   "confidence": "regulation",
+   "poise": 65,
+   "note": "NpcParam row 41200020 (variants agree)"
+  },
+  "demi_human_queen_gilika": {
+   "name": "Demi-Human Queen Gilika",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "fire": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "demi_human_queen_maggie": {
+   "name": "Demi-Human Queen Maggie",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "fire": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "demi_human_queen_margot": {
+   "name": "Demi-Human Queen Margot",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "fire": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "draconic_tree_sentinel": {
+   "name": "Draconic Tree Sentinel",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 32500033"
+  },
+  "dragonkin_soldier": {
+   "name": "Dragonkin Soldier",
+   "statuses": {
+    "poison": 1,
+    "rot": 0,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 3,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 1,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 46500262"
+  },
+  "dragonkin_soldier_of_nokstella": {
+   "name": "Dragonkin Soldier of Nokstella",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 3,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 1,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 46500960"
+  },
+  "dragonlord_placidusax": {
+   "name": "Dragonlord Placidusax",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 160,
+   "note": "PvE workbook, NpcParam row 45200072"
+  },
+  "elden_beast": {
+   "name": "Elden Beast",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 150,
+   "note": "PvE workbook, NpcParam row 22000078"
+  },
+  "elemer_of_the_briar": {
+   "name": "Elemer of the Briar",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 31000931"
+  },
+  "erdtree_avatar": {
+   "name": "Erdtree Avatar",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 3,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 3,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 3,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 5,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 48100020"
+  },
+  "erdtree_burial_watchdog": {
+   "name": "Erdtree Burial Watchdog",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "sleep": 0,
+    "madness": 0,
+    "frost": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "slash": 1,
+    "strike": 2,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "regulation",
+   "poise": 80,
+   "note": "NpcParam row 42600110 (variants agree)",
+   "short": "BURIAL WATCHDOG",
+   "aliases": [
+    "Burial Watchdog"
+   ]
+  },
+  "esgar_priest_of_blood": {
+   "name": "Esgar, Priest of Blood",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 0,
+    "madness": 3,
+    "frost": 3
+   },
+   "damage": {
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "slash": 3,
+    "strike": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "regulation",
+   "poise": 100,
+   "note": "NpcParam row 523860000 (variants agree)"
+  },
+  "fallingstar_beast": {
+   "name": "Fallingstar Beast",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 100,
+   "note": "PvE workbook, NpcParam row 46801930"
+  },
+  "fell_twins": {
+   "name": "Fell Twins",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 21403150"
+  },
+  "fia_s_champion": {
+   "name": "Fia's Champion",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 0,
+    "madness": 3,
+    "frost": 3
+   },
+   "damage": {
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "slash": 3,
+    "strike": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "regulation",
+   "poise": 100,
+   "note": "NpcParam row 523610066 (variants agree)"
+  },
+  "fire_giant": {
+   "name": "Fire Giant",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "fire": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 1,
+    "lightning": 3,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 47600050"
+  },
+  "flying_dragon_agheel": {
+   "name": "Flying Dragon Agheel",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 45000010"
+  },
+  "flying_dragon_greyll": {
+   "name": "Flying Dragon Greyll",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 45000042"
+  },
+  "frenzied_duelist": {
+   "name": "Frenzied Duelist",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 34000940"
+  },
+  "full_grown_fallingstar_beast": {
+   "name": "Full-Grown Fallingstar Beast",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 100,
+   "note": "PvE workbook, NpcParam row 46800032"
+  },
+  "glintstone_dragon_adula": {
+   "name": "Glintstone Dragon Adula",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 0,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 45021920"
+  },
+  "glintstone_dragon_smarag": {
+   "name": "Glintstone Dragon Smarag",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 0,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 45020920"
+  },
+  "god_devouring_serpent": {
+   "name": "God-Devouring Serpent",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 3,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 1,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 0,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 47100038"
+  },
+  "godefroy_the_grafted": {
+   "name": "Godefroy the Grafted",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 105,
+   "note": "PvE workbook, NpcParam row 47500030"
+  },
+  "godfrey_first_elden_lord": {
+   "name": "Godfrey, First Elden Lord",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "magic": 1,
+    "fire": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 47200070"
+  },
+  "godrick": {
+   "name": "Godrick the Grafted",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 105,
+   "aliases": [
+    "Godrick"
+   ],
+   "note": "PvE workbook, NpcParam row 47500014"
+  },
+  "godskin_apostle": {
+   "name": "Godskin Apostle",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 3,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "strike": 1,
+    "slash": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 2,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 35600030"
+  },
+  "godskin_duo": {
+   "name": "Godskin Duo",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 3,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "strike": 1,
+    "slash": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 1,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "godskin_noble": {
+   "name": "Godskin Noble",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 3,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "strike": 1,
+    "slash": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 1,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 35700172"
+  },
+  "grafted_scion": {
+   "name": "Grafted Scion",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 46900008"
+  },
+  "grave_warden_duelist": {
+   "name": "Grave Warden Duelist",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 34001133"
+  },
+  "great_wyrm_theodorix": {
+   "name": "Great Wyrm Theodorix",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 0,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 49110052"
+  },
+  "guardian_golem": {
+   "name": "Guardian Golem",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 3,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 293,
+   "note": "PvE workbook, NpcParam row 46600910"
+  },
+  "hoarah_loux_warrior": {
+   "name": "Hoarah Loux, Warrior",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 47210070"
+  },
+  "kindred_of_rot": {
+   "name": "Kindred of Rot",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 1,
+    "fire": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 2,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 30,
+   "note": "PvE workbook, NpcParam row 38100932"
+  },
+  "leonine_misbegotten": {
+   "name": "Leonine Misbegotten",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 3,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 34600913"
+  },
+  "lichdragon_fortissax": {
+   "name": "Lichdragon Fortissax",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 0,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 700,
+   "note": "PvE workbook, NpcParam row 45110066"
+  },
+  "loretta_knight_of_the_haligtree": {
+   "name": "Loretta, Knight of the Haligtree",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 3,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 32520054"
+  },
+  "mad_pumpkin_head": {
+   "name": "Mad Pumpkin Head",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "strike": 1,
+    "slash": 3,
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 2,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 43400940"
+  },
+  "magma_wyrm": {
+   "name": "Magma Wyrm",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 1,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "slash": 1,
+    "strike": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 0,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 49100940"
+  },
+  "magma_wyrm_makar": {
+   "name": "Magma Wyrm Makar",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 1,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 0,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 49100026"
+  },
+  "malenia": {
+   "name": "Malenia, Blade of Miquella",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 2,
+    "frost": 3,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "aliases": [
+    "Malenia, Goddess of Rot",
+    "Malenia",
+    "Malenia Goddess of Rot"
+   ],
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 21200056"
+  },
+  "maliketh": {
+   "name": "Maliketh, the Black Blade",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "aliases": [
+    "Maliketh"
+   ],
+   "note": "PvE workbook, NpcParam row 21101072"
+  },
+  "margit": {
+   "name": "Margit, the Fell Omen",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 21300014",
+   "aliases": [
+    "Margit"
+   ]
+  },
+  "mimic_tear": {
+   "name": "Mimic Tear",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 3,
+    "madness": 3,
+    "frost": 3
+   },
+   "damage": {
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "slash": 3,
+    "strike": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "regulation",
+   "aliases": [
+    "Stray Mimic Tear"
+   ],
+   "poise": 100,
+   "note": "NpcParam row 526100965 (variants agree)"
+  },
+  "miranda_the_blighted_bloom": {
+   "name": "Miranda the Blighted Bloom",
+   "statuses": {
+    "poison": 1,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "strike": 1,
+    "slash": 3,
+    "fire": 3,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 1,
+    "slash": 5,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "aliases": [
+    "Miranda the Blighted Blossom"
+   ],
+   "poise": 100,
+   "note": "PvE workbook, NpcParam row 44800930"
+  },
+  "misbegotten_crusader": {
+   "name": "Misbegotten Crusader",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 3,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 34601952"
+  },
+  "misbegotten_warrior": {
+   "name": "Misbegotten Warrior",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "pierce": 1,
+    "magic": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 3,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 34600941"
+  },
+  "mohg": {
+   "name": "Mohg, Lord of Blood",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 3,
+    "frost": 1,
+    "sleep": 1,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 0,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 110,
+   "note": "PvE workbook, NpcParam row 48000068",
+   "aliases": [
+    "Mohg"
+   ]
+  },
+  "mohg_the_omen": {
+   "name": "Mohg, the Omen",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 0,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 110,
+   "note": "PvE workbook, NpcParam row 48001935"
+  },
+  "morgott": {
+   "name": "Morgott, the Omen King",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "aliases": [
+    "Morgott"
+   ],
+   "note": "PvE workbook, NpcParam row 21300534"
+  },
+  "necromancer_garris": {
+   "name": "Necromancer Garris",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 0,
+    "madness": 3,
+    "frost": 3
+   },
+   "damage": {
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "slash": 3,
+    "strike": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "regulation",
+   "poise": 100,
+   "note": "NpcParam row 523760930 (variants agree)"
+  },
+  "night_s_cavalry": {
+   "name": "Night's Cavalry",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 31500020"
+  },
+  "nox_monk": {
+   "name": "Nox Monk",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 5
+   },
+   "confidence": "manual",
+   "poise": 65,
+   "note": "same profile as the Swordstress and Priest; not listed separately"
+  },
+  "nox_priest": {
+   "name": "Nox Priest",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 33000940"
+  },
+  "nox_swordstress": {
+   "name": "Nox Swordstress",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 33001940"
+  },
+  "omenkiller": {
+   "name": "Omenkiller",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 75,
+   "note": "PvE workbook, NpcParam row 48200920"
+  },
+  "onyx_lord": {
+   "name": "Onyx Lord",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 0,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 36001933"
+  },
+  "patches": {
+   "name": "Patches",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "sleep": 0,
+    "madness": 3,
+    "frost": 3
+   },
+   "damage": {
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "slash": 3,
+    "strike": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "regulation",
+   "poise": 100,
+   "note": "NpcParam row 523090010 (variants agree)"
+  },
+  "perfumer_tricia": {
+   "name": "Perfumer Tricia",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "strike": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 2,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 37011930"
+  },
+  "putrid_avatar": {
+   "name": "Putrid Avatar",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 3,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 3,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 5,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 48110040"
+  },
+  "putrid_crystalian": {
+   "name": "Putrid Crystalian",
+   "statuses": {
+    "poison": 1,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 3,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 0,
+    "strike": 2,
+    "slash": 0,
+    "pierce": 0,
+    "magic": 0,
+    "fire": 0,
+    "lightning": 0,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 70,
+   "note": "PvE workbook, NpcParam row 33500940"
+  },
+  "putrid_grave_warden_duelist": {
+   "name": "Putrid Grave Warden Duelist",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 3,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "fire": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 34000952"
+  },
+  "putrid_tree_spirit": {
+   "name": "Putrid Tree Spirit",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "magic": 1,
+    "fire": 3,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 5,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 46400942"
+  },
+  "radagon": {
+   "name": "Radagon of the Golden Order",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 0,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 3,
+    "lightning": 2,
+    "holy": 0
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 21900078",
+   "aliases": [
+    "Radagon"
+   ]
+  },
+  "radahn": {
+   "name": "Starscourge Radahn",
+   "statuses": {
+    "poison": 2,
+    "rot": 3,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 200,
+   "note": "PvE workbook, NpcParam row 47300040",
+   "aliases": [
+    "Radahn"
+   ]
+  },
+  "red_wolf_of_radagon": {
+   "name": "Red Wolf of Radagon",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 1,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 31811024"
+  },
+  "red_wolf_of_the_champion": {
+   "name": "Red Wolf of the Champion",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 1,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 31811032"
+  },
+  "regal_ancestor_spirit": {
+   "name": "Regal Ancestor Spirit",
+   "statuses": {
+    "poison": 1,
+    "rot": 1,
+    "bleed": 1,
+    "frost": 1,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "fire": 3,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "rennala": {
+   "name": "Rennala, Queen of the Full Moon",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 4,
+    "slash": 4,
+    "strike": 3,
+    "pierce": 4,
+    "magic": 0,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "note": "20300024b",
+   "aliases": [
+    "Rennala"
+   ]
+  },
+  "roundtable_knight_vyke": {
+   "name": "Roundtable Knight Vyke",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "aliases": [
+    "Vyke, Knight of the Roundtable"
+   ],
+   "poise": 51,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "royal_knight_loretta": {
+   "name": "Royal Knight Loretta",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 3,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 32520921"
+  },
+  "royal_revenant": {
+   "name": "Royal Revenant",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 70,
+   "note": "PvE workbook, NpcParam row 40200920"
+  },
+  "runebear": {
+   "name": "Runebear",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "fire": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 1,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 46300912"
+  },
+  "rykard": {
+   "name": "Rykard, Lord of Blasphemy",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 3,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 1,
+    "slash": 2,
+    "pierce": 2,
+    "magic": 1,
+    "fire": 0,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 47101038",
+   "aliases": [
+    "Rykard"
+   ]
+  },
+  "sanguine_noble": {
+   "name": "Sanguine Noble",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 2,
+    "holy": 2
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 35500930"
+  },
+  "scaly_misbegotten": {
+   "name": "Scaly Misbegotten",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 1,
+    "pierce": 3,
+    "fire": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 2,
+    "pierce": 4,
+    "magic": 3,
+    "fire": 5,
+    "lightning": 3,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 65,
+   "note": "PvE workbook, NpcParam row 34510912"
+  },
+  "sir_gideon_ofnir_the_all_knowing": {
+   "name": "Sir Gideon Ofnir, the All-Knowing",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 1,
+    "madness": 3
+   },
+   "damage": {
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 100,
+   "note": "hand-entered from extra_pve_rows.csv"
+  },
+  "soldier_of_godrick": {
+   "name": "Soldier of Godrick",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 1,
+    "pierce": 3,
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 2,
+    "pierce": 4,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 15,
+   "note": "PvE workbook, NpcParam row 43113906"
+  },
+  "spirit_caller_snail": {
+   "name": "Spirit Caller Snail",
+   "statuses": {
+    "poison": 3,
+    "rot": 3,
+    "bleed": 3,
+    "frost": 3,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 1,
+    "lightning": 3
+   },
+   "severity": {
+    "standard": 4,
+    "strike": 4,
+    "slash": 5,
+    "pierce": 4,
+    "magic": 1,
+    "fire": 3,
+    "lightning": 5,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 60,
+   "note": "PvE workbook, NpcParam row 41402920"
+  },
+  "stonedigger_troll": {
+   "name": "Stonedigger Troll",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 3,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "fire": 1,
+    "lightning": 1
+   },
+   "severity": {
+    "standard": 1,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 3,
+    "fire": 2,
+    "lightning": 2,
+    "holy": 3
+   },
+   "confidence": "pve-sheet",
+   "poise": 45,
+   "note": "PvE workbook, NpcParam row 46030910"
+  },
+  "tibia_mariner": {
+   "name": "Tibia Mariner",
+   "statuses": {
+    "poison": 0,
+    "rot": 2,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 3,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 3
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 5,
+    "slash": 2,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 2,
+    "lightning": 1,
+    "holy": 5
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 49500032"
+  },
+  "tree_sentinel": {
+   "name": "Tree Sentinel",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "strike": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 2,
+    "slash": 1,
+    "pierce": 2,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 32510030"
+  },
+  "ulcerated_tree_spirit": {
+   "name": "Ulcerated Tree Spirit",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 3,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "magic": 1,
+    "fire": 3,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 3,
+    "pierce": 3,
+    "magic": 2,
+    "fire": 5,
+    "lightning": 2,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 120,
+   "note": "PvE workbook, NpcParam row 46400950"
+  },
+  "valiant_gargoyle": {
+   "name": "Valiant Gargoyle",
+   "statuses": {
+    "poison": 0,
+    "rot": 0,
+    "bleed": 0,
+    "frost": 0,
+    "sleep": 0,
+    "madness": 0
+   },
+   "damage": {
+    "standard": 1,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 1,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 2,
+    "strike": 3,
+    "slash": 1,
+    "pierce": 1,
+    "magic": 2,
+    "fire": 1,
+    "lightning": 1,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 110,
+   "note": "PvE workbook, NpcParam row 47700165"
+  },
+  "wormface": {
+   "name": "Wormface",
+   "statuses": {
+    "poison": 2,
+    "rot": 2,
+    "bleed": 2,
+    "frost": 2,
+    "sleep": 2,
+    "madness": 0
+   },
+   "damage": {
+    "slash": 3,
+    "holy": 1
+   },
+   "severity": {
+    "standard": 3,
+    "strike": 3,
+    "slash": 4,
+    "pierce": 3,
+    "magic": 3,
+    "fire": 3,
+    "lightning": 3,
+    "holy": 1
+   },
+   "confidence": "pve-sheet",
+   "poise": 80,
+   "note": "PvE workbook, NpcParam row 45800030"
+  }
+ }
+}

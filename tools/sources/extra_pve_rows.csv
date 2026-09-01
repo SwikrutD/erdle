@@ -1,0 +1,16 @@
+# Boss rows the PvE workbook does not contain, transcribed from Fextralife.
+# Same units as the workbook: negation is a percentage of damage removed
+# and may be negative; resistance is the build-up needed to proc, or the
+# word Immune; poise is the effective figure (Fextralife calls it "Stance"
+# on some pages and "Poise" on others -- same number).
+name,standard,slash,strike,pierce,magic,fire,lightning,holy,poison,rot,bleed,frost,sleep,madness,poise
+Abductor Virgins,10,10,0,10,0,20,-20,20,Immune,Immune,Immune,Immune,Immune,Immune,65
+"Adan, Thief of Fire",34,33,30,32,25,34,24,24,242,242,246,246,284,284,86
+Demi-Human Queen Gilika,0,-10,0,0,0,-20,0,0,179,179,239,239,239,Immune,80
+Demi-Human Queen Maggie,0,-10,0,0,0,-20,0,0,184,184,245,245,245,Immune,80
+Demi-Human Queen Margot,0,-10,0,0,0,-20,0,0,181,181,241,241,241,Immune,80
+Godskin Duo,0,-10,35,0,20,40,20,40,345,345,251,345,251,Immune,80
+Nox Monk,0,-10,0,0,20,0,0,-20,326,326,326,326,237,Immune,65
+Regal Ancestor Spirit,0,-10,0,0,20,-20,0,-20,1169,1169,1169,1169,Immune,Immune,120
+"Sir Gideon Ofnir, the All-Knowing",0,0,0,0,0,0,-25,0,114,114,114,114,1143,0,100
+Roundtable Knight Vyke,41,39,39,39,26,32,21,26,Immune,Immune,Immune,Immune,Immune,Immune,51

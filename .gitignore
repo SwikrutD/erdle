@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+assets/erdle.ico
+screenshots/
+
+# Tesseract is copied in at build time by tools/vendor_tesseract.py.
+# ~30 MB of third-party binary does not belong in the history; the
+# release artifact carries it, and build.ps1 recreates it.
+vendor/
+
+# Game files. regulation.bin is FromSoftware's, extracted from an install;
+# it was read once to cross-check bosses.json and is not redistributable.
+# The same goes for anything unpacked out of it.
+regulation.bin
+*.regulation.bin
+params/
+
+# Raw captures. Only `assets/README-demo.gif` is committed; git never
+# forgets a blob, so a large one is permanent even after deletion.
+assets/README-GIF.gif

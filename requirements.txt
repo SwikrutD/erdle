@@ -1,0 +1,35 @@
+# Core detection, rendering and GameSense need nothing beyond the standard
+# library -- deliberately, so the test suite runs anywhere.
+
+# Live screen capture
+mss>=9.0.0
+
+# System tray application (tray.py) and icon drawing
+pystray>=0.19.0
+Pillow>=10.0.0
+
+# Boss name recognition. Also needs the Tesseract binary:
+#   winget install UB-Mannheim.TesseractOCR
+# Without it the app still detects fights and shows GOOD JOB / GIT GUD,
+# it just cannot name the boss.
+pytesseract>=0.3.10
+
+# Building the standalone exe
+pyinstaller>=6.0
+
+# Tests
+pytest>=7.0
+
+# Optional: real .lnk shortcuts for "Start with Windows".
+# Falls back to a .cmd file if absent.
+# pywin32>=306
+
+# Only for tools/import_xlsx.py, which rebuilds data/bosses.json from a
+# spreadsheet. Not needed to run the app.
+openpyxl>=3.1
+
+# Only for tools/extract_regulation.py, which unpacks a copy of the game's
+# regulation.bin to read the authoritative boss stats. Not needed to run
+# the app, and not bundled into the exe.
+# cryptography>=41.0
+# zstandard>=0.22
