@@ -1,206 +1,319 @@
 # Shipping ERDLE
 
-ERDLE -- **E**lden **R**ing **D**amage **L**ookup **E**ngine.
+ERDLE stands for **E**lden **R**ing **D**amage **L**ookup **E**ngine.
 
 ## There is no SteelSeries app store
 
-Worth stating plainly, because it shapes everything below. SteelSeries GG
-has no plugin marketplace and no self-service publishing. The "Engine
-Apps" list is first-party software (PrismSync, ImageSync, Discord) plus
-official game partnerships negotiated with studios. The "+ Your app here"
-link on their site goes to a business-development contact form.
+This is worth explaining up front because it affects how ERDLE has to be distributed.
 
-GameSense is an open local HTTP API, not an app platform. Anything that
-talks to it is an ordinary Windows program that happens to POST to
-`127.0.0.1`. That is what every community OLED tool does — GGSystemMonitor,
-gamesense-essentials, OmniLED — and it is what ERDLE does.
+SteelSeries GG does not have a plugin marketplace or a self-service publishing system. The "Engine Apps" section is mostly first-party software such as PrismSync, ImageSync, and Discord integrations, along with official game partnerships arranged directly with studios. The "+ Your app here" link on their site leads to a business development contact form rather than an app submission portal.
 
-So the distribution story is: **a signed-or-not `.exe` on GitHub Releases.**
-Users download it, double-click it, and it lives in the system tray. They
-never see a terminal, and they don't need Python.
+GameSense itself is simply a local HTTP API. It is not an app platform.
+
+Programs that use it are normal Windows applications that send requests to `127.0.0.1`. Community tools such as GGSystemMonitor, gamesense-essentials, and OmniLED work this way, and ERDLE does the same thing.
+
+So ERDLE is distributed as a Windows `.exe` through GitHub Releases.
+
+Users download it, double-click it, and ERDLE runs from the system tray. There is no terminal window and Python does not need to be installed.
 
 ## Building the exe
 
-From the project root, in PowerShell:
+From the project root, open PowerShell and run:
 
 ```powershell
 .\build.ps1
 ```
 
-That installs build dependencies, runs the test suite, refuses to build if
-anything fails, generates the icon, and produces `dist\ERDLE.exe`.
+The build script installs the required build dependencies, runs the test suite, stops if any tests fail, generates the application icon, and builds:
 
-Roughly 25–35 MB, one file, no installer required.
+```text
+dist\ERDLE.exe
+```
+
+The result is a single executable with no installer required.
 
 ## What the user experiences
 
 1. Download `ERDLE.exe`
-2. Double-click
-3. A gold rune appears in the system tray
+2. Double-click it
+3. A gold rune appears in the Windows system tray
 
-Right-click the tray icon for: current status, **Recalibrate**, **Start with
-Windows**, **Show log**, **Quit**.
+Right-clicking the tray icon gives access to:
 
-No console window ever appears. `tray.py` is the shipped entrypoint;
-`run.py` still exists for development, where watching the event stream is
-the point.
+* Current status
+* **Recalibrate**
+* **Start with Windows**
+* **Show log**
+* **Quit**
 
-## Why it works on other people's monitors
+No console window appears during normal use.
 
-This is the part that would otherwise break immediately. The regions in
-`geometry.py` were measured on one 3840×2160 display. Fractional
-coordinates survive a resolution change at the same aspect ratio, but a
-21:9 ultrawide or a 16:10 laptop puts the boss bar somewhere else, and a
-new user's first experience would be a panel stuck on ERDLE forever.
+`tray.py` is the entry point used by the packaged application. `run.py` is still available for development, where seeing the event stream in the terminal is useful.
 
-So the app calibrates itself. When it has no saved calibration it
-periodically sweeps a full screenshot for a boss bar — the same search
-`erdle.calibrate` uses — and the first time it finds one it saves those
-regions to `%APPDATA%\erdle\config.json` and stops sweeping.
+## Why it works on different monitors
 
-The tray icon shows blue while it is still looking, gold once it is
-running. Tested against 1080p, 1440p, 4K, 1920×1200 and 3440×1440
-ultrawide.
+This was one of the main problems that had to be solved before ERDLE could realistically be distributed.
 
-**Recalibrate** in the tray menu clears it, for people who change monitor.
+The original regions in `geometry.py` were measured on a 3840×2160 display. Fractional coordinates handle changes in resolution fairly well when the aspect ratio stays the same, but they are not enough for every display.
 
-## The Tesseract problem, and how it goes away
+A 21:9 ultrawide and a 16:10 laptop can place HUD elements differently. Without calibration, a new user could launch ERDLE and have it sit there waiting forever because it was looking in the wrong part of the screen.
 
-Boss *names* originally needed Tesseract — ~30 MB of third-party binary
-with its own licence, and unreliable on this input besides.
+ERDLE therefore calibrates itself.
 
-`erdle/glyphs.py` replaces it. The insight is that we never needed to
-pre-render 165 *names*: across every boss in the game there are only
-about forty distinct *characters*. Learn those and any name becomes
-readable, including bosses never encountered.
+If there is no saved calibration, the app periodically scans a full screenshot for the boss bar using the same search logic as `erdle.calibrate`.
 
-Nor do we need FromSoftware's font file. Glyphs are learned from the
-game's own output: whenever a name resolves to a real boss with high
-confidence, that plate's characters are already labelled, so each one is
-filed under the letter it must be. After a handful of fights the atlas
-covers the alphabet and Tesseract stops being consulted.
+Once it finds the bar, it saves the detected regions to:
 
-    plate -> column projection -> glyph boxes -> normalise each onto an
-    8x12 grid of quantised coverage -> nearest neighbour -> string
-
-Two measured design decisions:
-
-* **Quantised coverage, not bits.** Thresholding each cell to 0/1 throws
-  away exactly the information that survives a scale change. A stroke
-  covering 40% of a cell at one resolution and 60% at another flips a bit
-  but barely moves a coverage level.
-* **Size-aware matching.** At a fixed scale the same letter matches at
-  distance 0 while the closest different pair (M/N) sits at 14 —
-  separation is total. Across a 4x scale change the ranges overlap, so
-  samples are only compared when their heights are within 1.5x. A large
-  scale change makes the atlas decline and return `?` rather than guess,
-  which costs one fallback read and teaches it the new size.
-
-### Why one atlas covers every display
-
-The obvious worry with template matching is resolution: a 4K player's
-glyphs are twice the size of a 1080p player's.
-
-The tempting fix -- make the matcher scale-invariant -- does not work, and
-the reason is worth stating because it is not obvious. Normalising a glyph
-to its own bounding box necessarily throws away how big it was, and in
-every real font `C` and `c`, `O` and `o`, `S` and `s`, `W` and `w` are the
-*same shape at different sizes*. Perfect scale invariance would make those
-pairs indistinguishable. Measured on a synthetic alphabet, no grid size,
-supersampling rate or quantisation level separated same-letter-across-
-scales from different-letter-same-scale.
-
-So the matcher deliberately keeps size, comparing a glyph only against
-samples within 1.5x of its height -- and coverage is solved by supplying
-samples at every size instead:
-
+```text
+%APPDATA%\erdle\config.json
 ```
+
+After that, the full-screen search stops.
+
+The tray icon is blue while ERDLE is still searching for the HUD and turns gold once calibration is complete.
+
+The calibration system has been tested at:
+
+* 1920×1080
+* 2560×1440
+* 3840×2160
+* 1920×1200
+* 3440×1440 ultrawide
+
+The **Recalibrate** option in the tray menu clears the saved calibration for users who change monitors or display settings.
+
+## The Tesseract problem, and how it mostly disappears
+
+Boss names originally relied on Tesseract.
+
+That worked, but it meant bundling a fairly large third-party OCR package, dealing with another license, and depending on OCR that was not always reliable on Elden Ring's boss-name text.
+
+`erdle/glyphs.py` takes a different approach.
+
+The important realization was that ERDLE does not need templates for every boss name. Across all boss names, there are only around forty distinct characters.
+
+If ERDLE learns those characters, it can reconstruct names it has never seen before.
+
+It also does not need FromSoftware's actual font file.
+
+The glyphs can be learned directly from the game's rendered text. Whenever a boss name is identified with high confidence, ERDLE already knows what the text says. That means the individual characters in the name can be treated as labelled training samples.
+
+Over time, those samples build an atlas.
+
+Once enough characters are represented in the atlas, Tesseract is needed less and less.
+
+The pipeline is roughly:
+
+```text
+plate
+  -> column projection
+  -> glyph boxes
+  -> normalise each glyph onto an 8x12 grid
+  -> quantise coverage
+  -> nearest-neighbour match
+  -> reconstructed string
+```
+
+Two decisions turned out to matter quite a bit.
+
+### Quantised coverage instead of binary pixels
+
+Turning each grid cell into a simple 0 or 1 throws away useful information.
+
+For example, a stroke might cover 40% of one cell at one resolution and 60% at another. A binary threshold could turn those into completely different values even though the glyph is visually almost identical.
+
+Coverage levels preserve that information much better.
+
+### Size-aware matching
+
+At the same scale, matching works extremely well.
+
+A glyph can match another sample of the same letter with distance 0 while the nearest different letter, such as M versus N, is much farther away.
+
+The problem appears when the scale changes significantly.
+
+Across a large size difference, those distance ranges begin to overlap. For that reason, ERDLE only compares glyphs against samples whose heights are within roughly 1.5 times the current glyph height.
+
+If the scale is too different, the atlas returns `?` instead of guessing.
+
+That failed match can then fall back to another reader and become a new training sample at the correct size.
+
+## Why one atlas can cover several display resolutions
+
+Template matching normally raises an obvious problem: resolution.
+
+A glyph rendered at 4K can be roughly twice the size of the same glyph rendered at 1080p.
+
+The tempting solution is to make the matcher completely scale invariant.
+
+That does not work very well.
+
+If a glyph is normalized entirely to its own bounding box, its original size information disappears. In a real font, characters such as `C` and `c`, `O` and `o`, `S` and `s`, or `W` and `w` can be nearly the same shape at different sizes.
+
+Perfect scale invariance can therefore make uppercase and lowercase characters difficult or impossible to distinguish.
+
+Tests with a synthetic alphabet showed that changing grid size, supersampling, or quantisation did not fully solve that problem.
+
+So ERDLE deliberately keeps size as part of the matching process.
+
+Instead of forcing the matcher to handle every scale, the atlas contains samples at several common display resolutions.
+
+Run:
+
+```text
 python tools/learn.py --dir screenshots/
 ```
 
-Each screenshot is also learned at 1440p, 1200p, 1080p, 900p and 720p by
-downscaling. That is a close approximation of what the game actually
-renders at those resolutions: same geometry, same anti-aliasing, fewer
-pixels. Two 4K captures produced an atlas reporting
+Each screenshot is also learned after being downscaled to several common vertical resolutions:
 
-    serves: 720p, 900p, 1080p, 1200p, 1440p, 4K
+* 1440p
+* 1200p
+* 1080p
+* 900p
+* 720p
 
-`python tools/atlas.py show` prints that line, so you can confirm coverage
-before shipping. `--no-ladder` disables it if you want single-size samples.
+This works reasonably well because the downscaled screenshots closely approximate how the game renders the same HUD geometry at those resolutions.
 
-Anyone on an unusual display still self-heals: unmatched glyphs fall back
-to Tesseract if present, and are learned at their own size.
+Two 4K captures, for example, produced an atlas reporting:
 
-### Three ways to ship
+```text
+serves: 720p, 900p, 1080p, 1200p, 1440p, 4K
+```
 
-Tesseract is now a **tutor, not a dependency**:
+You can check the current coverage with:
 
-1. **Bake in a complete atlas.** Play until `python tools/atlas.py show`
-   reports full coverage, then `python tools/atlas.py ship`. Users need
-   nothing installed. This is the intended path.
-2. **Ask users to install Tesseract** as a one-off tutor, if you would
-   rather not ship an atlas.
-3. **Collect atlases from users** and `tools/atlas.py merge` them, which
-   broadens resolution coverage.
+```text
+python tools/atlas.py show
+```
+
+Use `--no-ladder` if you want to learn only the screenshot's original resolution.
+
+Users with unusual display sizes can still recover automatically. If the atlas cannot recognize a glyph, the fallback reader can identify it and teach the atlas a sample at that size.
+
+## Three ways to ship
+
+Tesseract is now better thought of as a tutor than as the core recognition system.
+
+There are three practical distribution options.
+
+### 1. Ship a complete atlas
+
+Play until:
+
+```text
+python tools/atlas.py show
+```
+
+reports enough coverage, then run:
+
+```text
+python tools/atlas.py ship
+```
+
+The atlas is bundled into the release and users do not need to install anything separately.
+
+This is the intended release path.
+
+### 2. Let users install Tesseract
+
+Users can install Tesseract once and let it act as the tutor while ERDLE builds its own atlas.
+
+This avoids shipping a large prebuilt atlas, although it adds setup work for users.
+
+### 3. Merge user-generated atlases
+
+Atlases produced on different systems can be combined with:
+
+```text
+tools/atlas.py merge
+```
+
+This is useful for increasing coverage across different resolutions and display configurations.
 
 ## Publishing
 
 ### What goes in the release
 
-`build.ps1` stages these in `dist\release\`:
+`build.ps1` stages the release files inside:
 
-| File | Why |
-|---|---|
-| `ERDLE.exe` | the whole application -- boss data, glyph atlas, Tesseract and tray icons are all inside it |
-| `LICENSE` | MIT, this project |
-| `THIRD_PARTY.md` | Apache-2.0 (Tesseract) and LGPL-3.0 (pystray) both require the notice to travel with the binary |
-| `SHA256.txt` | the checksum, because the exe is unsigned and SmartScreen will say so |
-
-`LICENSE` and `THIRD_PARTY.md` are *also* bundled inside the exe, so a
-user who downloads only the binary still receives the attribution. They
-ship loose as well so nobody has to unpack a binary to read a licence.
-
-Nothing else. No `data/` folder, no Python, no Tesseract install --
-one file plus three text files.
-
-### What goes in the repository
-
-Everything except the two things that must not be there:
-
-* `vendor/` -- ~30 MB of Tesseract, recreated by `build.ps1`
-* `regulation.bin` -- FromSoftware's file. Reading a local copy to
-  cross-check `bosses.json` is fine; redistributing one is not.
-
-Both are gitignored, and a test enforces the second.
-
+```text
+dist\release\
 ```
+
+| File             | Purpose                                                                                         |
+| ---------------- | ----------------------------------------------------------------------------------------------- |
+| `ERDLE.exe`      | The complete application. Boss data, glyph atlas, Tesseract, and tray icons are bundled inside. |
+| `LICENSE`        | MIT license for ERDLE                                                                           |
+| `THIRD_PARTY.md` | Third-party license notices, including Tesseract and pystray                                    |
+| `SHA256.txt`     | SHA256 checksum for verifying the executable                                                    |
+
+`LICENSE` and `THIRD_PARTY.md` are also bundled inside the executable.
+
+That way, someone who downloads only `ERDLE.exe` still receives the required attribution. Loose copies are included as well so nobody has to extract an executable just to read the licenses.
+
+There is no separate `data/` folder, Python installation, or Tesseract installer.
+
+The release is one executable plus three small text files.
+
+## What goes in the repository
+
+Almost everything can live in the repository except for two items.
+
+### `vendor/`
+
+This contains the local Tesseract runtime used during packaging. It is around 70 MB after stripping unnecessary debug data and can be recreated by `build.ps1`, so it does not need to be committed.
+
+### `regulation.bin`
+
+This belongs to FromSoftware.
+
+ERDLE can read a local copy to cross-check information in `bosses.json`, but redistributing the file itself is a different matter.
+
+It is gitignored, and there is a test to make sure it does not accidentally end up in the repository.
+
+The public repository looks roughly like this:
+
+```text
 GitHub repo
-├── Releases → ERDLE.exe + LICENSE + THIRD_PARTY.md + SHA256.txt
-├── README with a screenshot of the OLED
-└── LICENSE (MIT)
+├── Releases
+│   ├── ERDLE.exe
+│   ├── LICENSE
+│   ├── THIRD_PARTY.md
+│   └── SHA256.txt
+├── README
+└── LICENSE
 ```
 
-Then post it. Based on what actually spreads in this community: r/Eldenring
-for reach, r/SteelSeries for the people who own the hardware, and the
-SteelSeries Discord. A photograph of the keyboard mid-fight will do more
-than any amount of description.
+From there, the project can be shared wherever Elden Ring and SteelSeries users are likely to find it.
 
-## Two things to sort before a public release
+Likely places include r/Eldenring, r/SteelSeries, and the SteelSeries Discord.
 
-**Code signing.** Unsigned executables get SmartScreen's "Windows protected
-your PC" wall, and a good fraction of users stop there. A certificate is
-~$100–200/year. Without one, put a plain explanation and the SHA256 in the
-README, and expect the friction.
+For a project like this, a photo or short clip of ERDLE running during an actual boss fight will probably explain the idea much faster than a long description.
 
-**Antivirus false positives.** PyInstaller one-file builds are heuristically
-flagged fairly often, because self-extracting archives resemble packers.
-Submitting the binary to the major vendors as a false positive helps.
-A one-folder build (`--onedir`) trips fewer detectors, at the cost of
-shipping a folder rather than a single file.
+## Two things to deal with before a public release
+
+### Code signing
+
+Unsigned Windows executables can trigger the SmartScreen "Windows protected your PC" warning.
+
+That creates real friction because some users will stop as soon as they see it.
+
+A code-signing certificate typically costs money every year. If ERDLE stays unsigned, the README should clearly explain why the warning appears and provide the SHA256 checksum so users can verify the file they downloaded.
+
+### Antivirus false positives
+
+PyInstaller one-file executables sometimes trigger heuristic antivirus detections.
+
+That happens partly because self-extracting executables resemble the techniques used by packers and some malware.
+
+If a release is incorrectly detected, submitting the binary to antivirus vendors as a false positive can help.
+
+Another option is using a PyInstaller `--onedir` build. Those builds are sometimes less suspicious to heuristic scanners, although the tradeoff is that users download a folder of files instead of one executable.
 
 ## Licensing note
 
-`data/bosses.json` currently holds community-sourced approximations. If you
-replace it with values extracted from the game's `NpcParam`, that is
-FromSoftware's data — most community tools ship it anyway, but it is worth
-a deliberate decision rather than an accident.
+`data/bosses.json` currently contains community-sourced boss information.
+
+If those values are replaced with data extracted directly from the game's `NpcParam`, that changes the licensing situation because the values would come directly from FromSoftware's game data.
+
+Many community tools distribute extracted game information, but that should be a deliberate project decision rather than something that happens accidentally.

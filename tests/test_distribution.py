@@ -553,3 +553,109 @@ def test_the_reference_plates_are_present():
 
     for filename in seed_atlas.PLATES:
         assert (plates / filename).exists(), filename
+
+
+# --- the vendored binaries -------------------------------------------------
+
+
+def _pe_sections(data: bytes) -> dict:
+    import struct
+
+    pe = struct.unpack_from("<I", data, 0x3C)[0]
+    count = struct.unpack_from("<H", data, pe + 6)[0]
+    table = pe + 24 + struct.unpack_from("<H", data, pe + 20)[0]
+    out = {}
+    for index in range(count):
+        base = table + index * 40
+        name = data[base:base + 8].rstrip(b"\0").decode("latin-1")
+        size, pointer = struct.unpack_from("<II", data, base + 16)
+        out[name] = data[pointer:pointer + size]
+    return out
+
+
+def _fake_pe(sections):
+    """A minimal but structurally valid PE, for testing the stripper."""
+    import struct
+
+    header = bytearray(b"MZ" + b"\0" * 0x3E)
+    pe_offset = 0x40
+    struct.pack_into("<I", header, 0x3C, pe_offset)
+
+    optional_size = 0xF0
+    body = bytearray(b"PE\0\0")
+    body += struct.pack("<HHIIIHH", 0x8664, len(sections), 0, 0x1234, 5,
+                        optional_size, 0x2022)
+    body += b"\0" * optional_size
+
+    table_at = pe_offset + len(body)
+    data_at = table_at + len(sections) * 40
+    entries, payload = bytearray(), bytearray()
+    for name, content in sections:
+        # Exactly eight bytes. A longer name silently lengthened the
+        # table and shifted every section pointer, which looked like the
+        # stripper corrupting data when it was the fixture doing it.
+        assert len(name) <= 8, name
+        entries += name.encode().ljust(8, b"\0")
+        entries += struct.pack("<II", len(content), 0)
+        entries += struct.pack("<II", len(content), data_at + len(payload))
+        entries += b"\0" * 16
+        payload += content
+    return bytes(header + body + entries + payload)
+
+
+def test_debug_sections_are_stripped_from_vendored_binaries():
+    """Tesseract ships unstripped and it cost 90 MB of download.
+
+    `libtesseract-5.dll` is 96.8 MB, of which `.text` -- the code that
+    actually runs -- is 2.3 MB. The rest is DWARF, which nobody
+    downloading a tray utility will ever load. GNU stores it under names
+    too long for the 8-byte field, so the sections appear as "/19",
+    "/97" rather than ".debug_info".
+    """
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
+    from vendor_tesseract import strip_debug
+
+    original = _fake_pe([
+        (".text", b"CODE" * 64),
+        ("/19", b"D" * 4096),
+        (".rdata", b"RO" * 32),
+        ("/97", b"D" * 2048),
+        (".debug", b"D" * 512),
+    ])
+    stripped = strip_debug(original)
+
+    kept = _pe_sections(stripped)
+    assert set(kept) == {".text", ".rdata"}
+    assert kept[".text"] == b"CODE" * 64
+    assert kept[".rdata"] == b"RO" * 32
+    assert len(stripped) < len(original)
+
+
+def test_stripping_marks_the_binary_as_stripped():
+    """The DEBUG_STRIPPED characteristic, so tools do not hunt for DWARF."""
+    import struct
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
+    from vendor_tesseract import strip_debug
+
+    stripped = strip_debug(_fake_pe([(".text", b"C" * 64), ("/19", b"D" * 512)]))
+    pe = struct.unpack_from("<I", stripped, 0x3C)[0]
+    assert struct.unpack_from("<H", stripped, pe + 22)[0] & 0x0200
+    assert struct.unpack_from("<II", stripped, pe + 12) == (0, 0)
+
+
+def test_a_binary_with_nothing_to_strip_is_returned_unchanged():
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
+    from vendor_tesseract import strip_debug
+
+    clean = _fake_pe([(".text", b"C" * 64), (".rdata", b"R" * 32)])
+    assert strip_debug(clean) == clean
+    assert strip_debug(b"not a PE file at all") == b"not a PE file at all"

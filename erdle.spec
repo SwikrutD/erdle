@@ -13,7 +13,9 @@ no reader there is no name, and with no name there is no fight: the app
 does nothing at all. A dependency that decides whether the program works
 is not optional, so it ships inside.
 
-Adds ~30 MB. Apache 2.0 and BSD-2-Clause; see THIRD_PARTY.md.
+Adds ~55 MB after debug symbols are stripped by
+tools/vendor_tesseract.py. Apache 2.0 and BSD-2-Clause; see
+THIRD_PARTY.md.
 """
 
 import os

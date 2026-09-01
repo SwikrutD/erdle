@@ -21,3 +21,10 @@ params/
 # Raw captures. Only `assets/README-demo.gif` is committed; git never
 # forgets a blob, so a large one is permanent even after deletion.
 assets/README-GIF.gif
+
+# `--dump-plate` output and other scratch captures. Useful while
+# debugging a plate, not part of the project.
+plates/
+
+# Editor settings are personal, not project configuration.
+.vscode/

@@ -1,6 +1,6 @@
 # ERDLE v1.0.0
 
-**E**lden **R**ing **D**amage **L**ookup **E**ngine - an on-screen boss
+**E**lden **R**ing **D**amage **L**ookup **E**ngine: an on-screen boss
 cheat sheet. It notices when a fight starts, reads the boss's name off
 the screen, and shows what actually works: what to bring, what not to
 bother with, and the poise threshold.
@@ -63,13 +63,16 @@ above is the thing to check.
   run it on a 21:9 monitor yet. If the panel sits on "ERDLE" forever,
   that's this - please open an issue with your resolution.
 - The exe is unsigned. See above.
+- It is ~75 MB, most of that the bundled Tesseract OCR engine and its
+  ICU locale data. Down from 127 MB: the upstream Windows build ships
+  with 93 MB of debug symbols, which are now stripped at build time.
 - English boss names only.
 
 ## Files
 
 | File | |
 |---|---|
-| `ERDLE.exe` | the whole application, ~30 MB |
+| `ERDLE.exe` | the whole application, ~75 MB |
 | `LICENSE` | MIT |
 | `THIRD_PARTY.md` | Tesseract (Apache-2.0), pystray (LGPL-3.0), and the rest |
 | `SHA256.txt` | checksum for the exe |
